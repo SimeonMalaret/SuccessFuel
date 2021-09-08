@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //_moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
         //transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * Time.deltaTime * moveSpeed);
+
+        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
 
         if(Input.GetKey(KeyCode.Q))
         {
