@@ -139,6 +139,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1142561588477091868, guid: 78196c8a53863414eb7bc2606b2ee23c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142561588477091868, guid: 78196c8a53863414eb7bc2606b2ee23c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142561588477091868, guid: 78196c8a53863414eb7bc2606b2ee23c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142561588477091868, guid: 78196c8a53863414eb7bc2606b2ee23c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
@@ -240,6 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotationSpeed: 0.2
+  drunkRotationSpeed: 0
+  maxTimer: 0
 --- !u!136 &571991418
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -517,6 +531,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
+      propertyPath: maxTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
+      propertyPath: rotationSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
+      propertyPath: drunkRotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 24197496908500502, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
       propertyPath: planetAttractor
       value: 
