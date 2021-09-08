@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Speed")]
     public float moveSpeed;
     public float rotationSpeed;
-    public float drunkRotationSpeed;
 
+    [Header("Drunk Rotation")]
+    public float drunkRotationSpeed;
     private float drunkTimer = 0;
-    public float maxTimer;
+    public float maxDrunkTimer;
 
     // Update is called once per frame
     void Update()
@@ -19,29 +21,26 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
 
-
         if (Input.GetKey(KeyCode.Q))
         {
-            rotationSpeed = Mathf.Abs(rotationSpeed);
             drunkTimer = 0;
             transform.Rotate(new Vector3(0, -rotationSpeed, 0), Space.Self);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rotationSpeed = Mathf.Abs(rotationSpeed);
             drunkTimer = 0;
             transform.Rotate(new Vector3(0, rotationSpeed, 0), Space.Self);
         }
         else
         {
             drunkTimer += Time.deltaTime;
-            if (drunkTimer >= maxTimer)
+            if (drunkTimer >= maxDrunkTimer)
             {
                 drunkTimer = 0;
                 drunkRotationSpeed = -drunkRotationSpeed;
             }
+            transform.Rotate(new Vector3(0, drunkRotationSpeed, 0), Space.Self);
         }
-        transform.Rotate(new Vector3(0, drunkRotationSpeed, 0), Space.Self);
     }
 
     private void FixedUpdate()
