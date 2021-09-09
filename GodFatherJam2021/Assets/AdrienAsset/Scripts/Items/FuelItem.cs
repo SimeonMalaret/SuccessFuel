@@ -15,7 +15,7 @@ public class FuelItem : Items
     {
         if (other.tag == "Player")
         {
-            if (GameManager._instance.fuel < 40 - refuelNumber)
+            if (GameManager._instance.fuel > -40 + refuelNumber)
             {
                 GameManager._instance.fuel -= refuelNumber;
             }
