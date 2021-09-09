@@ -10322,6 +10322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  gravity: -2000
 --- !u!4 &511632701
 Transform:
   m_ObjectHideFlags: 0
@@ -15896,7 +15897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
       propertyPath: moveSpeed
-      value: 1000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
       propertyPath: rotationSpeed
@@ -16586,6 +16587,7 @@ MonoBehaviour:
   - {fileID: 1559111531041808849, guid: aa1c72a698afd994382d41c6dd35dba6, type: 3}
   - {fileID: 1593011207060027238, guid: 4304728034677894fb802d2c924e525e, type: 3}
   - {fileID: 2748677895060917257, guid: 85aa201bb601fb24b91f115505ee47a2, type: 3}
+  - {fileID: 1215338427524069730, guid: 547e05fc67bda2e4fb4f88b0372baf10, type: 3}
 --- !u!4 &1662027935
 Transform:
   m_ObjectHideFlags: 0

@@ -12,10 +12,7 @@ public class TornadoItem : Items
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
-        if (player.underEffect == false)
-        {
-            oldGravity = GameManager._instance.gravity;
-        }
+        oldGravity = GameManager._instance.gravity;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,15 +28,11 @@ public class TornadoItem : Items
 
     private IEnumerator EffectDuration(float time)
     {
-        if (player.underEffect == false)
-        {
-            player.underEffect = true;
-            GameManager._instance.gravity = gravity;
-            transform.position = new Vector3(100, 100, 100);
-            yield return new WaitForSeconds(time);
-            GameManager._instance.gravity = oldGravity;
-            player.underEffect = false;
-        }
+        GameManager._instance.gravity = gravity;
+        transform.position = new Vector3(100, 100, 100);
+        yield return new WaitForSeconds(time);
+        GameManager._instance.gravity = oldGravity;
+
         Destroy(this.gameObject);
     }
 }
