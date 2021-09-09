@@ -19,8 +19,8 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = firstPersonCam.position;
-        transform.rotation = firstPersonCam.rotation;
+        transform.position = topDownCam.position;
+        transform.rotation = topDownCam.rotation;
     }
 
     // Update is called once per frame
@@ -39,23 +39,27 @@ public class CameraScript : MonoBehaviour
         {
             changeCam = !changeCam;
             elapsedTime = 0;
+
+            if (changeCam == true)
+            {
+                targetPosition = firstPersonCam;
+                ChangeView(targetPosition);
+                /*LerpCamera();
+                LerpRotateCamera();*/
+            }
+            else if (changeCam == false)
+            {
+                targetPosition = topDownCam;
+                ChangeView(targetPosition);
+                /*LerpCamera();
+                LerpRotateCamera();*/
+        }
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        if (changeCam == true)
-        {
-            targetPosition = firstPersonCam;
-            LerpCamera();
-            LerpRotateCamera();
-        }
-        else if (changeCam == false)
-        {
-            targetPosition = topDownCam;
-            LerpCamera();
-            LerpRotateCamera();
-        }
+
     }
 
     private void LerpCamera()
@@ -87,6 +91,40 @@ public class CameraScript : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             transform.rotation = Quaternion.Lerp(transform.rotation, targetPosition.rotation, elapsedTime / lerpTime);
+        }
+    }
+
+    private void ChangeView(Transform trans)
+    {
+        transform.parent = trans;
+        StartCoroutine(ISetPositionIn(Vector2.zero, lerpTime));
+        StartCoroutine(ISetRotationIn(Quaternion.identity, lerpTime));
+    }
+
+    private IEnumerator ISetPositionIn(Vector3 position, float time)
+    {
+        Vector3 basePosition = transform.localPosition;
+        Vector3 deltaVector = position - basePosition;
+        int frameNumber = Mathf.FloorToInt(time * 60f);
+        Vector3 stepVector = deltaVector / (float)frameNumber;
+        //Vector3.Lerp(Vector3.zero, deltaVector, (float)i / (float)frameNumber)
+        for (int i = 0; i < frameNumber; i++)
+        {
+            transform.localPosition += stepVector;
+            yield return new WaitForSeconds(1f / 60f);
+        }
+    }
+
+    private IEnumerator ISetRotationIn(Quaternion rotation, float time)
+    {
+        Quaternion baseRotation = transform.localRotation;
+        int frameNumber = Mathf.FloorToInt(time * 60f);
+        //Quaternion stepVector = deltaVector / (float)frameNumber;
+        //Vector3.Lerp(Vector3.zero, deltaVector, (float)i / (float)frameNumber)
+        for (int i = 0; i < frameNumber; i++)
+        {
+            transform.localRotation = Quaternion.Slerp(baseRotation, rotation, (float)i / (float)frameNumber);
+            yield return new WaitForSeconds(1f / 60f);
         }
     }
 }
