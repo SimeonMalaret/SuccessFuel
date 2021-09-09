@@ -5,6 +5,8 @@ using UnityEngine;
 public class BuildingSpawner : MonoBehaviour
 {
     [Header("Values")]
+    [Tooltip("Spawn number have to be between 1 and the total number of spawnPoints")]
+    public float minSpawnNumber;
     public float spawnInterval;
     private Coroutine spawning;
 
@@ -23,6 +25,7 @@ public class BuildingSpawner : MonoBehaviour
     void Start()
     {
         emptySpawnPoints = new List<SpawnPoints>();
+        PreSpawnBuilding(minSpawnNumber);
     }
 
     // Update is called once per frame
@@ -31,6 +34,31 @@ public class BuildingSpawner : MonoBehaviour
         if (spawning == null)
         {
             spawning = StartCoroutine(clockSpawner(spawnInterval));
+        }
+    }
+
+    public void PreSpawnBuilding(float minSpawnNumber)
+    {
+        CheckSpawnPoints();
+
+        //Vérification que le nombre de building à spawn au début ne dépasse le nombre de spawnpoints disponibles
+        if (minSpawnNumber > emptySpawnPoints.Count) 
+        {
+            minSpawnNumber = emptySpawnPoints.Count;
+        }
+
+        //Spawn des buildings de départ en fonction de la variable minSpawnNumber
+        for (int i = 0; i < minSpawnNumber; i++)
+        {
+            CheckSpawnPoints();
+            if (emptySpawnPoints.Count > 0)
+            {
+                GameObject building = Instantiate(buildings[(Random.Range(0, buildings.Count))], emptySpawnPoints[(Random.Range(0, emptySpawnPoints.Count))].spawnPoint);
+                if (building.GetComponent<Items>() != true)
+                {
+                    building.AddComponent<Building>();
+                }
+            }
         }
     }
 
@@ -46,8 +74,11 @@ public class BuildingSpawner : MonoBehaviour
         CheckSpawnPoints();
         if (emptySpawnPoints.Count > 0)
         {
-            Instantiate(buildings[(Random.Range(0, buildings.Count))], emptySpawnPoints[(Random.Range(0, emptySpawnPoints.Count))].spawnPoint);
-            Debug.Log(emptySpawnPoints.Count);
+            GameObject building = Instantiate(buildings[(Random.Range(0, buildings.Count))], emptySpawnPoints[(Random.Range(0, emptySpawnPoints.Count))].spawnPoint);
+            if (building.GetComponent<Items>() != true)
+            {
+                building.AddComponent<Building>();
+            }
         }
     }
 
