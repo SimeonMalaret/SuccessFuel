@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     public RectTransform needle;
     private Coroutine fuelLostCor;
 
+    public int buildingDamage;
+    public int mouetteDamage;
+
     public PlayerMovement player;
+    [HideInInspector] public bool isInvincible = false;
     public float gravity;
     [HideInInspector] public float oldGravity;
 
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         if (fuel <= 40)
         {
+            MoveNeedle();
             FuelLost(fuelLostTimer);
         }
         else
@@ -61,7 +66,6 @@ public class GameManager : MonoBehaviour
     private IEnumerator LoseFuel(float time)
     {
         fuel++;
-        MoveNeedle();
         yield return new WaitForSeconds(time);
         fuelLostCor = null;
     }
@@ -69,5 +73,30 @@ public class GameManager : MonoBehaviour
     public void MoveNeedle()
     {
         needle.transform.eulerAngles = new Vector3(0, 0, fuel);
+    }
+
+    public void FuelHit(int amount, float time)
+    {
+        if (isInvincible == false)
+        {
+            fuel += amount;
+            isInvincible = true;
+            StartCoroutine(InvincibleTimer(time));
+        }
+    }
+
+    private IEnumerator InvincibleTimer(float time)
+    {
+        Debug.Log("Lance toi !");
+        float frameTime = 0.1f;
+        float timePassed = 0;
+        while (timePassed < time)
+        {
+            player.mr.enabled = !player.mr.enabled;
+            yield return new WaitForSeconds(frameTime);
+            timePassed += frameTime;
+        }
+        player.mr.enabled = true;
+        isInvincible = false;
     }
 }

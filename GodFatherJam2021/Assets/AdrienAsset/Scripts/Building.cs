@@ -14,9 +14,7 @@ public class Building : MonoBehaviour
         audioSource.PlayOneShot(soundEffect);
         if (other.tag == "Player")
         {
-            GameManager._instance.fuel++;
-            
-            Destroy(this.gameObject);
+            GameManager._instance.FuelHit(GameManager._instance.buildingDamage, 0.5f);
         }
     }
 }
