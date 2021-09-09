@@ -8,9 +8,7 @@ public class Building : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameManager._instance.fuel++;
-            
-            Destroy(this.gameObject);
+            GameManager._instance.FuelHit(2, 0.5f);
         }
     }
 }

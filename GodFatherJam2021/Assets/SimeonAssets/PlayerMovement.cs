@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public bool underEffect;
     [HideInInspector] public Rigidbody rb;
+    public MeshRenderer mr;
 
     private void Start()
     {
