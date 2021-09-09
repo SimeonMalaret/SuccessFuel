@@ -11,8 +11,11 @@ public class SpeedItem : Items
     // Start is called before the first frame update
     void Start()
     {
-        oldSpeed = player.moveSpeed;
         player = FindObjectOfType<PlayerMovement>();
+        if (player.underEffect == false)
+        {
+            oldSpeed = player.moveSpeed;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,11 +31,15 @@ public class SpeedItem : Items
 
     private IEnumerator EffectDuration(float time)
     {
-        player.moveSpeed *= speedMultiplier;
-        transform.position = new Vector3(100, 100, 100);
-        yield return new WaitForSeconds(time);
-        player.moveSpeed = 0;
-        player.moveSpeed = oldSpeed;
+        if (player.underEffect == false)
+        {
+            player.underEffect = true;
+            player.moveSpeed *= speedMultiplier;
+            transform.position = new Vector3(100, 100, 100);
+            yield return new WaitForSeconds(time);
+            player.moveSpeed = oldSpeed;
+            player.underEffect = false;
+        }
         Destroy(this.gameObject);
     }
 }
