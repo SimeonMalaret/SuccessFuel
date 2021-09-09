@@ -6,13 +6,12 @@ public class TornadoItem : Items
 {
     public float duration;
     public float gravity;
-    private float oldGravity;
+    public float speed;
     private Coroutine effectDuration;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
-        oldGravity = GameManager._instance.gravity;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,8 +30,7 @@ public class TornadoItem : Items
         GameManager._instance.gravity = gravity;
         transform.position = new Vector3(100, 100, 100);
         yield return new WaitForSeconds(time);
-        GameManager._instance.gravity = oldGravity;
-
+        GameManager._instance.gravity = GameManager._instance.oldGravity;
         Destroy(this.gameObject);
     }
 }
