@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     public int score = 0;
     public float gravity;
+    [HideInInspector] public float oldGravity;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score = 0;
+        oldGravity = gravity;
     }
 
     // Update is called once per frame

@@ -5,32 +5,41 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
 
-    public Transform focusObj;
+    public Transform firstPersonCam;
+    public Transform topDownCam;
     public float accuranci = 2.5f;
+    public bool changeCam = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*transform.position = focusObj.position;
-        transform.rotation = focusObj.rotation;*/
+        transform.position = firstPersonCam.position;
+        transform.rotation = firstPersonCam.rotation;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-        /*transform.position = focusObj.position;
-
-        transform.rotation = Quaternion.Lerp(transform.rotation, focusObj.rotation, accuranci * Time.deltaTime);*/
-
-
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Space) && changeCam == false)
         {
-            //transform.Rotate(new Vector3(0, 0, -GetComponentInParent<PlayerMovement>().rotationSpeed), Space.Self);
+            changeCam = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.Space) && changeCam == true)
         {
-            //transform.Rotate(new Vector3(0, 0, GetComponentInParent<PlayerMovement>().rotationSpeed), Space.Self);
+            changeCam = false;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (changeCam == true)
+        {
+            transform.position = firstPersonCam.position;
+            transform.rotation = firstPersonCam.rotation;
+        } else if (changeCam == false)
+        {
+            transform.position = topDownCam.position;
+            transform.rotation = topDownCam.rotation;
         }
     }
 }

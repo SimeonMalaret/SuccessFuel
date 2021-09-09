@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8264949216347288502}
   - component: {fileID: 6149112014109476732}
   - component: {fileID: 2315082458857335019}
+  - component: {fileID: 5845792504934126982}
   m_Layer: 0
   m_Name: HotAirBalloon
   m_TagString: Untagged
@@ -95,3 +96,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8774027, y: 3.1959498, z: 1.8774028}
   m_Center: {x: 0.00000011920929, y: 1.4129978, z: 0.00000020861626}
+--- !u!95 &5845792504934126982
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644968271577523881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb5d3ae68e983ac499a1380b24b7e7cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
