@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  refuelNumber: 5
+  refuelNumber: 10
 --- !u!1001 &3871638396790856320
 PrefabInstance:
   m_ObjectHideFlags: 0
