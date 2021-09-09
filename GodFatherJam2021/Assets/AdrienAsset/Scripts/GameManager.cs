@@ -5,7 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
-    public int score = 0;
+
+    [Header("Fuel")]
+    [HideInInspector] public int fuel = -40;
+    public float fuelLostTimer;
+    public RectTransform needle;
+    private Coroutine fuelLostCor;
+
+    public PlayerMovement player;
     public float gravity;
     [HideInInspector] public float oldGravity;
 
@@ -25,13 +32,40 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
         oldGravity = gravity;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (fuel < 40)
+        {
+            FuelLost(fuelLostTimer);
+        }
+        else
+        {
+            player.moveSpeed = 0;
+        }
+    }
 
+    public void FuelLost(float time)
+    {
+        if (fuelLostCor == null)
+        {
+            StartCoroutine(LoseFuel(time));
+        }
+    }
+
+    private IEnumerator LoseFuel(float time)
+    {
+        fuel++;
+        MoveNeedle();
+        yield return new WaitForSeconds(time);
+        fuelLostCor = null;
+    }
+
+    public void MoveNeedle()
+    {
+        needle.rotation = new Quaternion(needle.rotation.x, needle.rotation.y, fuel, -1);
     }
 }

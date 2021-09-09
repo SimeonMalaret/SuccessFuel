@@ -8,7 +8,7 @@ public class Building : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameManager._instance.score++;
+            GameManager._instance.fuel++;
             
             Destroy(this.gameObject);
         }
