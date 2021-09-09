@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject obj3D;
     private float currentRot;
     public float speedRot = 3f;
+
+    [HideInInspector] public bool underEffect;
     [HideInInspector] public Rigidbody rb;
 
     private void Start()
