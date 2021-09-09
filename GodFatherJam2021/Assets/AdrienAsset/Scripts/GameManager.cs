@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float gravity;
     [HideInInspector] public float oldGravity;
 
+    public AudioClip buildBump;
     private void Awake()
     {
         if (GameManager._instance == null)

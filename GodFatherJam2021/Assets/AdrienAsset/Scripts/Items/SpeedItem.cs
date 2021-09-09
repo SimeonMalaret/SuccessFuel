@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpeedItem : Items
 {
+    public AudioSource audioSource;
+    public AudioClip soundEffect;
     public float duration;
     public float speedMultiplier;
     private float oldSpeed;
@@ -22,6 +24,7 @@ public class SpeedItem : Items
     {
         if (other.tag == "Player")
         {
+            audioSource.PlayOneShot(soundEffect);
             if (effectDuration == null)
             {
                 effectDuration = StartCoroutine(EffectDuration(duration));

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TornadoItem : Items
 {
+    public AudioSource audioSource;
+    public AudioClip soundEffect;
     public float duration;
     public float gravity;
     public float speed;
@@ -18,6 +20,7 @@ public class TornadoItem : Items
     {
         if (other.tag == "Player")
         {
+            audioSource.PlayOneShot(soundEffect);
             if (effectDuration == null)
             {
                 effectDuration = StartCoroutine(EffectDuration(duration));
