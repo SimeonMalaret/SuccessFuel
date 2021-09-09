@@ -11,17 +11,17 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = focusObj.position;
-        transform.rotation = focusObj.rotation;
+        /*transform.position = focusObj.position;
+        transform.rotation = focusObj.rotation;*/
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position = focusObj.position;
+        /*transform.position = focusObj.position;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, focusObj.rotation, accuranci * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, focusObj.rotation, accuranci * Time.deltaTime);*/
 
 
         if (Input.GetKey(KeyCode.Q))
