@@ -7,11 +7,21 @@ public class PlayerMovement : MonoBehaviour
     [Header("Speed")]
     public float moveSpeed;
     public float rotationSpeed;
+    private float oldSpeed;
 
     [Header("Drunk Rotation")]
     public float drunkRotationSpeed;
     private float drunkTimer = 0;
     public float maxDrunkTimer;
+
+    [HideInInspector] public bool underEffect;
+    [HideInInspector] public Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        oldSpeed = moveSpeed;
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,7 +29,11 @@ public class PlayerMovement : MonoBehaviour
         //_moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         //transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * Time.deltaTime * moveSpeed);
 
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        //transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        if (moveSpeed < 1)
+        {
+            moveSpeed = oldSpeed;
+        }
 
         if (Input.GetKey(KeyCode.Q))
         {
@@ -45,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rb.velocity = transform.forward * Time.deltaTime * moveSpeed;
         //GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(_moveDirection) * moveSpeed * Time.deltaTime);
     }
 }

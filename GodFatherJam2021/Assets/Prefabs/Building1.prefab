@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6086845219354031672}
   - component: {fileID: 8330575414777955058}
   - component: {fileID: 6271229040558065156}
+  - component: {fileID: 3609976178040831291}
   m_Layer: 0
   m_Name: Building1
   m_TagString: Untagged
@@ -92,12 +93,31 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7538139861415289639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 13400000, guid: 19e8467106e290444a06aed07e88c9e3, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.443202, y: 8.4, z: 2.443202}
   m_Center: {x: 0, y: 3.9, z: 0}
+--- !u!95 &3609976178040831291
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538139861415289639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e887eb3d10adc8e4abe4ea5d9b153ae7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &864628584570104155
 PrefabInstance:
   m_ObjectHideFlags: 0
