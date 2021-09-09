@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         if (fuel <= 40)
         {
+            MoveNeedle();
             FuelLost(fuelLostTimer);
         }
         else
@@ -61,7 +62,6 @@ public class GameManager : MonoBehaviour
     private IEnumerator LoseFuel(float time)
     {
         fuel++;
-        MoveNeedle();
         yield return new WaitForSeconds(time);
         fuelLostCor = null;
     }
