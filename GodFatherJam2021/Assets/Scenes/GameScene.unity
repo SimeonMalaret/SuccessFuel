@@ -844,8 +844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc533af08fa4ee149ba1acef8e99bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnNumber: 31
-  spawnInterval: 2
+  minSpawnNumber: 37
+  spawnInterval: 1
   spawnPoints:
   - spawnPoint: {fileID: 1295304797}
     isEmpty: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   - {fileID: 8029951221821999509, guid: 62f7410222edaa747a353731572e263e, type: 3}
   - {fileID: 6142126998037919325, guid: ea21ddbe9c8a2ac40998a8a233e8dae2, type: 3}
   - {fileID: 8029951221821999509, guid: 62f7410222edaa747a353731572e263e, type: 3}
-  - {fileID: 533283473422887081, guid: 9c0c75cc0ee2a4a4cb773e5c6f650ac2, type: 3}
+  - {fileID: 8029951221821999509, guid: 62f7410222edaa747a353731572e263e, type: 3}
 --- !u!4 &68786772
 Transform:
   m_ObjectHideFlags: 0
@@ -13165,10 +13165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel: -40
-  fuelLostTimer: 1
+  fuelLostTimer: 0.3
   needle: {fileID: 1773990752}
-  buildingDamage: 5
-  mouetteDamage: 3
+  buildingDamage: 8
+  mouetteDamage: 5
   player: {fileID: 350134362}
   isInvincible: 0
   gravity: -2000
@@ -23445,8 +23445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc533af08fa4ee149ba1acef8e99bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnNumber: 98
-  spawnInterval: 0.1
+  minSpawnNumber: 0
+  spawnInterval: 0.3
   spawnPoints:
   - spawnPoint: {fileID: 1911582827}
     isEmpty: 0
