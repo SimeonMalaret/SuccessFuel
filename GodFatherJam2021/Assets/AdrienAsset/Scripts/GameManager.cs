@@ -33,12 +33,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         oldGravity = gravity;
+        fuel = -40;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fuel < 40)
+        if (fuel <= 40)
         {
             FuelLost(fuelLostTimer);
         }
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (fuelLostCor == null)
         {
-            StartCoroutine(LoseFuel(time));
+            fuelLostCor = StartCoroutine(LoseFuel(time));
         }
     }
 
@@ -66,6 +67,6 @@ public class GameManager : MonoBehaviour
 
     public void MoveNeedle()
     {
-        needle.rotation = new Quaternion(needle.rotation.x, needle.rotation.y, fuel, -1);
+        needle.transform.eulerAngles = new Vector3(0, 0, fuel);
     }
 }
