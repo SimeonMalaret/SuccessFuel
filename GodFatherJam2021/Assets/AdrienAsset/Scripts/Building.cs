@@ -9,9 +9,10 @@ public class Building : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         audioSource = GetComponent<AudioSource>();
-        //audioSource.PlayOneShot(soundEffect);
+
         soundEffect = GameManager._instance.buildBump;
         audioSource.PlayOneShot(soundEffect);
+        Debug.Log(soundEffect);
         if (other.tag == "Player")
         {
             GameManager._instance.FuelHit(GameManager._instance.buildingDamage, 0.5f);

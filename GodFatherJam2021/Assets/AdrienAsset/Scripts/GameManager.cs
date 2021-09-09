@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator InvincibleTimer(float time)
     {
-        Debug.Log("Lance toi !");
+        //Debug.Log("Lance toi !");
         float frameTime = 0.1f;
         float timePassed = 0;
         while (timePassed < time)
