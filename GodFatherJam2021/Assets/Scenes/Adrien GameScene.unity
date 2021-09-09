@@ -10399,6 +10399,8 @@ MonoBehaviour:
   fuel: 0
   fuelLostTimer: 2
   needle: {fileID: 265762692}
+  buildingDamage: 5
+  mouetteDamage: 3
   player: {fileID: 350134362}
   isInvincible: 0
   gravity: -2000

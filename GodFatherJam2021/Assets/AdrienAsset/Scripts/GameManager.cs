@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public RectTransform needle;
     private Coroutine fuelLostCor;
 
+    public int buildingDamage;
+    public int mouetteDamage;
+
     public PlayerMovement player;
     [HideInInspector] public bool isInvincible = false;
     public float gravity;
