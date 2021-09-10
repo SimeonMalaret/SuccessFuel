@@ -102,7 +102,7 @@ MonoBehaviour:
   topDownCam: {fileID: 0}
   lerpTime: 0.5
   audioSource: {fileID: 0}
-  soundEffect: {fileID: 8300000, guid: f2072f4929061bc49937451f791cf7a8, type: 3}
+  soundEffect: {fileID: 8300000, guid: 5dca17f23fd5ee94bb6b354f05fbafa7, type: 3}
 --- !u!65 &8782621240747432811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.204
   m_Pitch: 1
   Loop: 0
   Mute: 0
