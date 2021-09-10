@@ -103,12 +103,14 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Lance toi !");
         float frameTime = 0.1f;
         float timePassed = 0;
+        player.explosion.SetActive(true);
         while (timePassed < time)
         {
             player.mr.enabled = !player.mr.enabled;
             yield return new WaitForSeconds(frameTime);
             timePassed += frameTime;
         }
+        player.explosion.SetActive(false);
         player.mr.enabled = true;
         isInvincible = false;
     }
