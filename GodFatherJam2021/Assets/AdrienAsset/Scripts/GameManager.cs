@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip buildBump;
     public AudioClip gameOver;
+
+    public GameObject gameOverCanvas;
+
     private void Awake()
     {
         if (GameManager._instance == null)
@@ -54,8 +57,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            
             player.moveSpeed = 0;
+            gameOverCanvas.SetActive(true);
         }
     }
 
