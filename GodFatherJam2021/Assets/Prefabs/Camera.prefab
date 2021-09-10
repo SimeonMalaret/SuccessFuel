@@ -100,7 +100,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   firstPersonCam: {fileID: 0}
   topDownCam: {fileID: 0}
-  lerpTime: 0.5
+  lerpTime: 0.25
   audioSource: {fileID: 0}
   soundEffect: {fileID: 8300000, guid: 5dca17f23fd5ee94bb6b354f05fbafa7, type: 3}
 --- !u!65 &8782621240747432811

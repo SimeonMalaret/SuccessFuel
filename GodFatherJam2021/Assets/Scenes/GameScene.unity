@@ -13387,6 +13387,7 @@ MonoBehaviour:
   firstPersonCam: {fileID: 549836852}
   topDownCam: {fileID: 1372719673}
   changeCam: 0
+  pauseTimer: 0
   gameOverCanvas: {fileID: 1151412980}
 --- !u!4 &511632701
 Transform:
@@ -22419,7 +22420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
       propertyPath: rotationSpeed
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 24197496908500501, guid: c8b5d07042c905b49af2f32b5b4d9fd6, type: 3}
       propertyPath: drunkRotationSpeed
@@ -31937,7 +31938,7 @@ MonoBehaviour:
   topDownCam: {fileID: 1372719673}
   accuranci: 2.5
   changeCam: 1
-  lerpTime: 0.5
+  lerpTime: 0.25
   lerpSpeed: 15
 --- !u!114 &2123160172
 MonoBehaviour:

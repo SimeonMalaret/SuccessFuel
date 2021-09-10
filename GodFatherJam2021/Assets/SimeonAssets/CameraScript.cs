@@ -35,26 +35,26 @@ public class CameraScript : MonoBehaviour
         //    changeCam = false;
         //}
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            changeCam = !changeCam;
-            elapsedTime = 0;
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    changeCam = !changeCam;
+        //    elapsedTime = 0;
 
-            if (changeCam == true)
-            {
-                targetPosition = firstPersonCam;
-                ChangeView(targetPosition);
-                /*LerpCamera();
-                LerpRotateCamera();*/
-            }
-            else if (changeCam == false)
-            {
-                targetPosition = topDownCam;
-                ChangeView(targetPosition);
-                /*LerpCamera();
-                LerpRotateCamera();*/
-        }
-        }
+        //    if (changeCam == true)
+        //    {
+        //        targetPosition = firstPersonCam;
+        //        ChangeView(targetPosition);
+        //        /*LerpCamera();
+        //        LerpRotateCamera();*/
+        //    }
+        //    else if (changeCam == false)
+        //    {
+        //        targetPosition = topDownCam;
+        //        ChangeView(targetPosition);
+        //        /*LerpCamera();
+        //        LerpRotateCamera();*/
+        //}
+        //}
     }
 
     private void FixedUpdate()
