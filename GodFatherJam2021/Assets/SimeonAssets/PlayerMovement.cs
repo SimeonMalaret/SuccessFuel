@@ -30,12 +30,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //_moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
         //transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0) * Time.deltaTime * moveSpeed);
 
         //transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+        rb.velocity = transform.forward * Time.fixedDeltaTime * moveSpeed;
 
         if (moveSpeed < 1)
         {
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (currentRot < 20)
             {
-                currentRot += Time.deltaTime * speedRot;
+                currentRot += Time.fixedDeltaTime * speedRot;
             }
             else
             {
@@ -64,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (currentRot > -20)
             {
-                currentRot -= Time.deltaTime * speedRot;
+                currentRot -= Time.fixedDeltaTime * speedRot;
             }
             else
             {
@@ -75,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            drunkTimer += Time.deltaTime * speedRot;
+            drunkTimer += Time.fixedDeltaTime * speedRot;
             if (drunkTimer >= maxDrunkTimer)
             {
                 drunkTimer = 0;
@@ -90,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (currentRot < 0)
             {
-                currentRot += Time.deltaTime * speedRot;
+                currentRot += Time.fixedDeltaTime * speedRot;
                 if (currentRot > -.1f && currentRot < .1f)
                 {
                     currentRot = 0;
@@ -98,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (currentRot > 0)
             {
-                currentRot -= Time.deltaTime * speedRot;
+                currentRot -= Time.fixedDeltaTime * speedRot;
                 if (currentRot > -.1f && currentRot < .1f)
                 {
                     currentRot = 0;
@@ -107,11 +108,5 @@ public class PlayerMovement : MonoBehaviour
 
             obj3D.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, currentRot));
         }
-    }
-
-    private void FixedUpdate()
-    {
-        rb.velocity = transform.forward * Time.deltaTime * moveSpeed;
-        //GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(_moveDirection) * moveSpeed * Time.deltaTime);
     }
 }
