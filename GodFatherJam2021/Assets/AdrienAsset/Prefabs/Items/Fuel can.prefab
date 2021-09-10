@@ -114,6 +114,7 @@ MonoBehaviour:
   refuelNumber: 10
   audioSource: {fileID: 6618361919848550913}
   soundEffect: {fileID: 8300000, guid: 3f23cf2ed2d3d0644906e32cedaecd70, type: 3}
+  mR: {fileID: 1079633157006877525}
 --- !u!82 &6618361919848550913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -265,8 +266,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuel
       objectReference: {fileID: 0}
+    - target: {fileID: 4269819511673960917, guid: 32f3918390197314691ae219d3ec60fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32f3918390197314691ae219d3ec60fd, type: 3}
+--- !u!1 &1079633157006877525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4269819511673960917, guid: 32f3918390197314691ae219d3ec60fd, type: 3}
+  m_PrefabInstance: {fileID: 3871638396790856320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &409950772622572015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3461758027289060207, guid: 32f3918390197314691ae219d3ec60fd, type: 3}
