@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public float oldGravity;
 
     public AudioClip buildBump;
+    public AudioClip Fuel;
     private void Awake()
     {
         if (GameManager._instance == null)
