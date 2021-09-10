@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
+        gameOverCanvas.SetActive(false);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
