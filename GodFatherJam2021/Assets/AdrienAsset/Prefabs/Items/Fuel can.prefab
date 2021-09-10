@@ -114,7 +114,7 @@ MonoBehaviour:
   refuelNumber: 10
   audioSource: {fileID: 6618361919848550913}
   soundEffect: {fileID: 8300000, guid: 90012cc41c02dd34198d3895949b08aa, type: 3}
-  mR: {fileID: 1079633157006877525}
+  fuelGraph: {fileID: 1079633157006877525}
 --- !u!82 &6618361919848550913
 AudioSource:
   m_ObjectHideFlags: 0

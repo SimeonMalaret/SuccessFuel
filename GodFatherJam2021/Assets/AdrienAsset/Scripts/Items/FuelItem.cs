@@ -8,7 +8,7 @@ public class FuelItem : Items
 
     public AudioSource audioSource;
     public AudioClip soundEffect;
-    public MeshRenderer mR;
+    public GameObject fuelGraph;
     private void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
@@ -24,7 +24,8 @@ public class FuelItem : Items
             {
                 GameManager._instance.fuel -= refuelNumber;
             }
-            mR.enabled = false;
+
+            fuelGraph.SetActive(false);
             Destroy(this.gameObject, 1f);
         }
     }
