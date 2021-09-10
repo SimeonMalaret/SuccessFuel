@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
     {
         oldGravity = gravity;
         fuel = -40;
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
