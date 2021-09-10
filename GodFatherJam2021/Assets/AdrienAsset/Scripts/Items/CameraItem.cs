@@ -10,6 +10,9 @@ public class CameraItem : Items
 
     public float lerpTime = .5f;
 
+    public AudioSource audioSource;
+    public AudioClip soundEffect;
+
     private Transform targetPosition;
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,9 @@ public class CameraItem : Items
     {
         if (other.tag == "Player")
         {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.PlayOneShot(soundEffect);
+
             GameManager._instance.changeCam = !GameManager._instance.changeCam;;
             if (GameManager._instance.changeCam == true)
             {
@@ -74,7 +80,7 @@ public class CameraItem : Items
                 /*LerpCamera();
                 LerpRotateCamera();*/
             }
-            Destroy(this.gameObject, lerpTime);
+            Destroy(this.gameObject, lerpTime +1f);
         }
     }
 }
