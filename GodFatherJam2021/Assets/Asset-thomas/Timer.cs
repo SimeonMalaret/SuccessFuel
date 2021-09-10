@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     private float starTime;
+    private float freezeTime;
+    private float currenTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currenTime = Time.time - starTime;
-
+        if (GameManager._instance.pauseTimer == false)
+        {
+            currenTime = Time.time - starTime;
+        } else
+        {
+            freezeTime = currenTime;
+        }
         string minutes = ((int)currenTime / 60).ToString();
         string seconds = (currenTime % 60).ToString("f1");
         timerText.text = minutes + ":" + seconds;

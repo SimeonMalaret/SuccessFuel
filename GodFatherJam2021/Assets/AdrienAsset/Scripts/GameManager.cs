@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public Transform topDownCam;
     public bool changeCam;
 
+    [HideInInspector] public bool pauseTimer = false;
     public GameObject gameOverCanvas;
 
     private void Awake()
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         {
             player.moveSpeed = 0;
             gameOverCanvas.SetActive(true);
+            pauseTimer = true;
         }
     }
 
@@ -122,6 +124,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
+        pauseTimer = false;
         gameOverCanvas.SetActive(false);
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
