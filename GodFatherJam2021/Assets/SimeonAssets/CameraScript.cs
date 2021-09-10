@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     public Transform firstPersonCam;
     public Transform topDownCam;
     public float accuranci = 2.5f;
-    public bool changeCam = true;
+    public bool changeCam = false;
 
     public float lerpTime = 5f;
     private float elapsedTime = 0f;

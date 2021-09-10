@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     public AudioClip buildBump;
     public AudioClip gameOver;
 
+    public Transform mainCam;
+    public Transform firstPersonCam;
+    public Transform topDownCam;
+    public bool changeCam;
+
     public GameObject gameOverCanvas;
 
     private void Awake()

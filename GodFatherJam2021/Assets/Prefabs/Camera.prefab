@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 877439771553919507}
   - component: {fileID: 4288149531507981750}
   - component: {fileID: 2046435292803139964}
+  - component: {fileID: 2333302531998820723}
+  - component: {fileID: 8782621240747432811}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533283473422887081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,3 +83,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2333302531998820723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533283473422887081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f8c348ced0def479da45b930fde261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mainCam: {fileID: 0}
+  firstPersonCam: {fileID: 0}
+  topDownCam: {fileID: 0}
+  lerpTime: 0.5
+  effectDuration: 30
+--- !u!65 &8782621240747432811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533283473422887081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7612311, y: 2.0562785, z: 1.6303676}
+  m_Center: {x: -0.13123974, y: 0.41376352, z: -0.024527788}
