@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     public float gravity;
     [HideInInspector] public float oldGravity;
 
+    public AudioSource audioSource;
     public AudioClip buildBump;
-    public AudioClip Fuel;
+    public AudioClip gameOver;
     private void Awake()
     {
         if (GameManager._instance == null)
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            
             player.moveSpeed = 0;
         }
     }
